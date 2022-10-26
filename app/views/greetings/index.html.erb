@@ -1,14 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Greetings</h1>
+<%= render("form", greeting: Greeting.new) %>
 
-<div id="greetings">
-  <% @greetings.each do |greeting| %>
-    <%= render greeting %>
-    <p>
-      <%= link_to "Show this greeting", greeting %>
-    </p>
-  <% end %>
-</div>
+<br />
+<% @greetings.each do |greeting| %>
+  <%= render greeting %>
+  <p>
+    <%= link_to "Show this greeting", greeting %>
+  </p>
+<% end %>
 
 <%= link_to "New greeting", new_greeting_path %>
